@@ -12,8 +12,8 @@ const SLOT_CONFIG = [
 const OUTFIT_CATS = ["Streetwear","Casual","Athletic","Smart Casual","Edgy","Light & Summer","Vintage & Retro","Boot Fits","Converse Fits","Vans Fits","Supra Fits","Adidas Fits","Nike Fits","Layered Looks","Monochrome","Hoodie Fits","Vest Fits","High Top Fits","Low Top Fits","Mid Top Fits","Jacket Fits","Custom"];
 
 const inputStyle = {
-  background: "#0a0a14", border: "1px solid #ffffff12", borderRadius: 8,
-  color: "#e8e8f0", padding: "9px 12px", fontSize: 13, fontFamily: "Georgia, serif",
+  background: "#050505", border: "1px solid #ffffff12", borderRadius: 8,
+  color: "#e8e8f0", padding: "9px 12px", fontSize: 13, fontFamily: "'Lexend', sans-serif",
   outline: "none", width: "100%", boxSizing: "border-box",
 };
 
@@ -32,7 +32,7 @@ function SlotPicker({ slot, inventory, selected, onSelect }) {
         border: selectedItem ? "1px solid #e8ff4a30" : "1px dashed #ffffff14",
         borderRadius: 10, padding: "11px 14px", textAlign: "left", cursor: "pointer",
         color: selectedItem ? "#e8e8f0" : "#444",
-        fontFamily: "Georgia, serif", fontSize: 13, display: "flex", alignItems: "center", gap: 10,
+        fontFamily: "'Lexend', sans-serif", fontSize: 13, display: "flex", alignItems: "center", gap: 10,
       }}>
         {selectedItem && (
           <div style={{ width: 18, height: 18, borderRadius: 5, background: selectedItem.color, border: "1px solid rgba(255,255,255,0.15)", flexShrink: 0 }} />
@@ -46,13 +46,13 @@ function SlotPicker({ slot, inventory, selected, onSelect }) {
       {open && (
         <div style={{
           position: "absolute", top: "calc(100% + 4px)", left: 0, right: 0, zIndex: 50,
-          background: "#111120", border: "1px solid #ffffff12", borderRadius: 10,
+          background: "#0a0a0a", border: "1px solid #ffffff12", borderRadius: 10,
           maxHeight: 220, overflowY: "auto",
           boxShadow: "0 8px 32px #000000aa",
         }}>
           {slot.optional && (
             <div onClick={() => { onSelect(null); setOpen(false); }}
-              style={{ padding: "10px 14px", cursor: "pointer", color: "#555", fontFamily: "Georgia, serif", fontSize: 13,
+              style={{ padding: "10px 14px", cursor: "pointer", color: "#555", fontFamily: "'Lexend', sans-serif", fontSize: 13,
                 borderBottom: "1px solid #ffffff08",
                 background: selected === null ? "#e8ff4a0a" : "transparent" }}>
               None
@@ -65,11 +65,11 @@ function SlotPicker({ slot, inventory, selected, onSelect }) {
               borderBottom: "1px solid #ffffff06",
             }}>
               <div style={{ width: 16, height: 16, borderRadius: 4, background: item.color, border: "1px solid rgba(255,255,255,0.15)", flexShrink: 0 }} />
-              <span style={{ color: "#ccc", fontFamily: "Georgia, serif", fontSize: 13 }}>{item.name}</span>
+              <span style={{ color: "#ccc", fontFamily: "'Lexend', sans-serif", fontSize: 13 }}>{item.name}</span>
             </div>
           ))}
           {options.length === 0 && (
-            <div style={{ padding: "10px 14px", color: "#444", fontFamily: "Georgia, serif", fontSize: 12 }}>
+            <div style={{ padding: "10px 14px", color: "#444", fontFamily: "'Lexend', sans-serif", fontSize: 12 }}>
               No items in this category
             </div>
           )}
@@ -132,7 +132,7 @@ export default function Assembler({ inventory, customOutfits, setCustomOutfits }
         <div style={{ fontFamily: "'Courier New', monospace", fontSize: 10, color: "#e8ff4a", letterSpacing: 4, textTransform: "uppercase", marginBottom: 4, opacity: 0.8 }}>
           {customOutfits.length} custom outfits saved
         </div>
-        <h1 style={{ margin: 0, fontSize: "clamp(24px, 4vw, 44px)", fontFamily: "Georgia, serif", fontWeight: 700, color: "#f0f0ff", letterSpacing: "-1px", lineHeight: 1 }}>
+        <h1 style={{ margin: 0, fontSize: "clamp(24px, 4vw, 44px)", fontFamily: "'Lexend', sans-serif", fontWeight: 700, color: "#f0f0ff", letterSpacing: "-1px", lineHeight: 1 }}>
           ASSEMBLE A FIT
         </h1>
       </div>
@@ -151,14 +151,14 @@ export default function Assembler({ inventory, customOutfits, setCustomOutfits }
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           {/* Preview card */}
           <div style={{
-            background: "#111120", border: "1px solid #e8ff4a18", borderRadius: 14,
+            background: "#0a0a0a", border: "1px solid #e8ff4a18", borderRadius: 14,
             padding: 18, minHeight: 160,
           }}>
             <div style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: "#e8ff4a", letterSpacing: 2, textTransform: "uppercase", marginBottom: 10, opacity: 0.8 }}>
               Preview
             </div>
             {preview.length === 0 ? (
-              <div style={{ color: "#333", fontFamily: "Georgia, serif", fontSize: 13, paddingTop: 10 }}>
+              <div style={{ color: "#333", fontFamily: "'Lexend', sans-serif", fontSize: 13, paddingTop: 10 }}>
                 Select pieces to preview your fit...
               </div>
             ) : (
@@ -166,7 +166,7 @@ export default function Assembler({ inventory, customOutfits, setCustomOutfits }
                 {preview.map(r => (
                   <div key={r.label} style={{ display: "flex", gap: 10 }}>
                     <span style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: "#e8ff4a", letterSpacing: 1.5, fontWeight: 700, minWidth: 46, paddingTop: 1, opacity: 0.7 }}>{r.label}</span>
-                    <span style={{ fontSize: 12.5, color: "#ccc", fontFamily: "Georgia, serif" }}>{r.val}</span>
+                    <span style={{ fontSize: 12.5, color: "#ccc", fontFamily: "'Lexend', sans-serif" }}>{r.val}</span>
                   </div>
                 ))}
               </div>
@@ -174,7 +174,7 @@ export default function Assembler({ inventory, customOutfits, setCustomOutfits }
           </div>
 
           {/* Save form */}
-          <div style={{ background: "#0d0d1a", border: "1px solid #ffffff0a", borderRadius: 14, padding: 18, display: "flex", flexDirection: "column", gap: 12 }}>
+          <div style={{ background: "#080808", border: "1px solid #ffffff0a", borderRadius: 14, padding: 18, display: "flex", flexDirection: "column", gap: 12 }}>
             <h3 style={{ margin: "0 0 4px", fontFamily: "'Courier New', monospace", fontSize: 11, color: "#888", letterSpacing: 2, textTransform: "uppercase" }}>Save to Lookbook</h3>
 
             <div>
@@ -224,14 +224,14 @@ export default function Assembler({ inventory, customOutfits, setCustomOutfits }
               const tagColor = categoryColors[o.category] || "#e8ff4a";
               return (
                 <div key={o.id || i} style={{
-                  background: "#111120", border: "1px solid #ffffff0e", borderRadius: 12, padding: "14px 16px",
+                  background: "#0a0a0a", border: "1px solid #ffffff0e", borderRadius: 12, padding: "14px 16px",
                   position: "relative",
                 }}>
                   <button onClick={() => setCustomOutfits(prev => prev.filter((_, j) => j !== i))}
                     style={{ position: "absolute", top: 10, right: 10, background: "transparent", border: "none", color: "#333", cursor: "pointer", fontSize: 13 }}>✕</button>
                   <div style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: tagColor, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 4 }}>{o.category}</div>
-                  <div style={{ fontFamily: "Georgia, serif", fontSize: 14, fontWeight: 700, color: "#ddd", marginBottom: 2 }}>{o.name}</div>
-                  <div style={{ fontSize: 10, color: "#555", fontFamily: "Georgia, serif", fontStyle: "italic", marginBottom: 10 }}>"{o.vibe}"</div>
+                  <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 14, fontWeight: 700, color: "#ddd", marginBottom: 2 }}>{o.name}</div>
+                  <div style={{ fontSize: 10, color: "#555", fontFamily: "'Lexend', sans-serif", fontStyle: "italic", marginBottom: 10 }}>"{o.vibe}"</div>
                   <div style={{ display: "flex", gap: 4 }}>
                     {o.colors.map((c, ci) => (
                       <div key={ci} style={{ width: 12, height: 12, borderRadius: "50%", background: c, border: "1px solid rgba(255,255,255,0.12)" }} />

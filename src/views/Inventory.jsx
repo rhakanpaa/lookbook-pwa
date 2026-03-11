@@ -16,8 +16,8 @@ function AddItemModal({ onSave, onClose }) {
 
   return (
     <div style={{ position: "fixed", inset: 0, background: "#00000090", zIndex: 200, display: "flex", alignItems: "center", justifyContent: "center", padding: 20, backdropFilter: "blur(6px)" }} onClick={onClose}>
-      <div style={{ background: "#111120", border: "1px solid #ffffff18", borderRadius: 18, padding: 28, maxWidth: 400, width: "100%" }} onClick={e => e.stopPropagation()}>
-        <h3 style={{ margin: "0 0 20px", fontFamily: "Georgia, serif", color: "#eeeeff", fontSize: 18 }}>Add New Item</h3>
+      <div style={{ background: "#0a0a0a", border: "1px solid #ffffff18", borderRadius: 18, padding: 28, maxWidth: 400, width: "100%" }} onClick={e => e.stopPropagation()}>
+        <h3 style={{ margin: "0 0 20px", fontFamily: "'Lexend', sans-serif", color: "#eeeeff", fontSize: 18 }}>Add New Item</h3>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
           <label style={labelStyle}>
@@ -72,8 +72,8 @@ function AddItemModal({ onSave, onClose }) {
 const labelStyle = { display: "flex", flexDirection: "column", gap: 5 };
 const labelText = { fontFamily: "'Courier New', monospace", fontSize: 10, color: "#666", letterSpacing: 1.5, textTransform: "uppercase" };
 const inputStyle = {
-  background: "#0a0a14", border: "1px solid #ffffff12", borderRadius: 8,
-  color: "#e8e8f0", padding: "9px 12px", fontSize: 13, fontFamily: "Georgia, serif",
+  background: "#050505", border: "1px solid #ffffff12", borderRadius: 8,
+  color: "#e8e8f0", padding: "9px 12px", fontSize: 13, fontFamily: "'Lexend', sans-serif",
   outline: "none", width: "100%", boxSizing: "border-box",
 };
 const primaryBtn = {
@@ -117,7 +117,7 @@ export default function Inventory({ inventory, setInventory }) {
           <div style={{ fontFamily: "'Courier New', monospace", fontSize: 10, color: "#e8ff4a", letterSpacing: 4, textTransform: "uppercase", marginBottom: 4, opacity: 0.8 }}>
             {inventory.length} items
           </div>
-          <h1 style={{ margin: 0, fontSize: "clamp(24px, 4vw, 44px)", fontFamily: "Georgia, serif", fontWeight: 700, color: "#f0f0ff", letterSpacing: "-1px", lineHeight: 1 }}>
+          <h1 style={{ margin: 0, fontSize: "clamp(24px, 4vw, 44px)", fontFamily: "'Lexend', sans-serif", fontWeight: 700, color: "#f0f0ff", letterSpacing: "-1px", lineHeight: 1 }}>
             MY WARDROBE
           </h1>
         </div>
@@ -140,7 +140,7 @@ export default function Inventory({ inventory, setInventory }) {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 10 }}>
               {items.map(item => (
                 <div key={item.id} style={{
-                  background: "#111120", border: "1px solid #ffffff0e", borderRadius: 12,
+                  background: "#0a0a0a", border: "1px solid #ffffff0e", borderRadius: 12,
                   padding: "14px 14px 12px",
                   display: "flex", alignItems: "center", gap: 12, position: "relative",
                 }}>
@@ -149,7 +149,7 @@ export default function Inventory({ inventory, setInventory }) {
                     border: "1.5px solid rgba(255,255,255,0.12)", flexShrink: 0,
                   }} />
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: 12.5, color: "#ddd", fontFamily: "Georgia, serif", lineHeight: 1.3,
+                    <div style={{ fontSize: 12.5, color: "#ddd", fontFamily: "'Lexend', sans-serif", lineHeight: 1.3,
                       overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                       {item.name}
                     </div>
@@ -174,8 +174,8 @@ export default function Inventory({ inventory, setInventory }) {
 
       {confirmDelete && (
         <div style={{ position: "fixed", inset: 0, background: "#00000090", zIndex: 200, display: "flex", alignItems: "center", justifyContent: "center", padding: 20, backdropFilter: "blur(4px)" }} onClick={() => setConfirmDelete(null)}>
-          <div style={{ background: "#111120", border: "1px solid #ff444444", borderRadius: 16, padding: 24, maxWidth: 320, width: "100%" }} onClick={e => e.stopPropagation()}>
-            <p style={{ color: "#ccc", fontFamily: "Georgia, serif", fontSize: 14, margin: "0 0 18px", lineHeight: 1.5 }}>
+          <div style={{ background: "#0a0a0a", border: "1px solid #ff444444", borderRadius: 16, padding: 24, maxWidth: 320, width: "100%" }} onClick={e => e.stopPropagation()}>
+            <p style={{ color: "#ccc", fontFamily: "'Lexend', sans-serif", fontSize: 14, margin: "0 0 18px", lineHeight: 1.5 }}>
               Remove <strong style={{ color: "#fff" }}>{inventory.find(i => i.id === confirmDelete)?.name}</strong> from your wardrobe?
             </p>
             <div style={{ display: "flex", gap: 10 }}>

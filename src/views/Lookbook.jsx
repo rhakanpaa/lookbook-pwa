@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { outfits as baseOutfits, categories, categoryColors } from "../data/outfits";
 
 const SwatchDot = ({ color }) => (
@@ -10,8 +10,8 @@ const OutfitCard = ({ outfit, isHighlighted, onClose }) => {
   return (
     <div style={{
       background: isHighlighted
-        ? `linear-gradient(145deg, #1a1a2e 0%, #12122a 100%)`
-        : "linear-gradient(145deg, #111120 0%, #0d0d1a 100%)",
+        ? `linear-gradient(145deg, #111118 0%, #0c0c14 100%)`
+        : "linear-gradient(145deg, #0a0a0a 0%, #080808 100%)",
       border: isHighlighted ? `1.5px solid ${tagColor}88` : "1px solid #ffffff0e",
       borderRadius: 14,
       padding: "20px 18px",
@@ -40,10 +40,10 @@ const OutfitCard = ({ outfit, isHighlighted, onClose }) => {
         color: tagColor, letterSpacing: 1.5, fontWeight: 700, textTransform: "uppercase", marginBottom: 8,
       }}>{outfit.category}</div>
 
-      <h3 style={{ margin: "0 0 3px", fontSize: 16, fontFamily: "Georgia, serif", fontWeight: 700, color: "#eeeeff", lineHeight: 1.2 }}>
+      <h3 style={{ margin: "0 0 3px", fontSize: 16, fontFamily: "'Lexend', sans-serif", fontWeight: 700, color: "#eeeeff", lineHeight: 1.2 }}>
         {outfit.name}
       </h3>
-      <p style={{ margin: "0 0 14px", fontSize: 11, color: "#666", fontStyle: "italic", fontFamily: "Georgia, serif" }}>
+      <p style={{ margin: "0 0 14px", fontSize: 11, color: "#666", fontStyle: "italic", fontFamily: "'Lexend', sans-serif" }}>
         "{outfit.vibe}"
       </p>
 
@@ -60,7 +60,7 @@ const OutfitCard = ({ outfit, isHighlighted, onClose }) => {
             <span style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: accent ? "#e8ff4a" : tagColor,
               letterSpacing: 1.5, fontWeight: 700, minWidth: 46, paddingTop: 1, opacity: accent ? 1 : 0.75 }}>{label}</span>
             <span style={{ fontSize: 12, color: accent ? "#e8ff4a99" : "#bbb",
-              fontFamily: "Georgia, serif", lineHeight: 1.4, flex: 1,
+              fontFamily: "'Lexend', sans-serif", lineHeight: 1.4, flex: 1,
               fontStyle: accent ? "italic" : "normal" }}>{value}</span>
           </div>
         ))}
@@ -84,7 +84,7 @@ const RandomModal = ({ outfit, onClose, onReroll }) => {
       backdropFilter: "blur(6px)",
     }} onClick={onClose}>
       <div style={{
-        background: "#111120", border: `1.5px solid ${tagColor}66`,
+        background: "#0a0a0a", border: `1.5px solid ${tagColor}66`,
         borderRadius: 20, padding: 32, maxWidth: 420, width: "100%",
         boxShadow: `0 0 80px ${tagColor}22, 0 24px 80px #000000cc`,
         position: "relative",
@@ -92,11 +92,11 @@ const RandomModal = ({ outfit, onClose, onReroll }) => {
         <div style={{ textAlign: "center", marginBottom: 20 }}>
           <div style={{ fontFamily: "'Courier New', monospace", fontSize: 10, color: "#e8ff4a", letterSpacing: 3, textTransform: "uppercase", marginBottom: 6 }}>Today's Fit</div>
           <div style={{ fontSize: 28, marginBottom: 4 }}>🎲</div>
-          <h2 style={{ margin: 0, fontFamily: "Georgia, serif", color: "#eeeeff", fontSize: 22 }}>{outfit.name}</h2>
-          <p style={{ margin: "4px 0 0", color: "#666", fontStyle: "italic", fontSize: 12, fontFamily: "Georgia, serif" }}>"{outfit.vibe}"</p>
+          <h2 style={{ margin: 0, fontFamily: "'Lexend', sans-serif", color: "#eeeeff", fontSize: 22 }}>{outfit.name}</h2>
+          <p style={{ margin: "4px 0 0", color: "#666", fontStyle: "italic", fontSize: 12, fontFamily: "'Lexend', sans-serif" }}>"{outfit.vibe}"</p>
         </div>
 
-        <div style={{ background: "#0a0a14", borderRadius: 12, padding: "16px 18px", marginBottom: 20 }}>
+        <div style={{ background: "#050505", borderRadius: 12, padding: "16px 18px", marginBottom: 20 }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             {[
               { label: "TOP", value: outfit.top },
@@ -110,7 +110,7 @@ const RandomModal = ({ outfit, onClose, onReroll }) => {
                 <span style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: accent ? "#e8ff4a" : tagColor,
                   fontWeight: 700, letterSpacing: 1.5, minWidth: 50 }}>{label}</span>
                 <span style={{ fontSize: 13, color: accent ? "#e8ff4a88" : "#ccc",
-                  fontFamily: "Georgia, serif", lineHeight: 1.4, fontStyle: accent ? "italic" : "normal" }}>{value}</span>
+                  fontFamily: "'Lexend', sans-serif", lineHeight: 1.4, fontStyle: accent ? "italic" : "normal" }}>{value}</span>
               </div>
             ))}
           </div>
@@ -134,7 +134,7 @@ const RandomModal = ({ outfit, onClose, onReroll }) => {
 };
 
 export default function Lookbook({ customOutfits }) {
-  const allOutfits = [...baseOutfits, ...customOutfits];
+  const allOutfits = useMemo(() => [...baseOutfits, ...customOutfits], [customOutfits]);
   const allCategories = ["All", ...categories.slice(1), ...(customOutfits.length ? ["Custom"] : [])];
 
   const [activeCategory, setActiveCategory] = useState("All");
@@ -162,7 +162,7 @@ export default function Lookbook({ customOutfits }) {
           {filtered.length} of {allOutfits.length} combinations
         </div>
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-          <h1 style={{ margin: 0, fontSize: "clamp(28px, 5vw, 52px)", fontFamily: "Georgia, serif", fontWeight: 700, color: "#f0f0ff", letterSpacing: "-1.5px", lineHeight: 1 }}>
+          <h1 style={{ margin: 0, fontSize: "clamp(28px, 5vw, 52px)", fontFamily: "'Lexend', sans-serif", fontWeight: 700, color: "#f0f0ff", letterSpacing: "-1.5px", lineHeight: 1 }}>
             THE LOOKBOOK
           </h1>
           <button onClick={rollRandom} style={{
@@ -188,9 +188,9 @@ export default function Lookbook({ customOutfits }) {
           placeholder="Search shoes, tops, vibes..."
           style={{
             width: "100%", boxSizing: "border-box",
-            background: "#111120", border: "1px solid #ffffff12",
+            background: "#0a0a0a", border: "1px solid #ffffff12",
             borderRadius: 10, padding: "10px 16px", color: "#e8e8f0",
-            fontSize: 14, fontFamily: "Georgia, serif",
+            fontSize: 14, fontFamily: "'Lexend', sans-serif",
             outline: "none",
           }}
         />
@@ -222,7 +222,7 @@ export default function Lookbook({ customOutfits }) {
       </div>
 
       {filtered.length === 0 && (
-        <div style={{ textAlign: "center", padding: "60px 0", color: "#444", fontFamily: "Georgia, serif", fontSize: 15 }}>
+        <div style={{ textAlign: "center", padding: "60px 0", color: "#444", fontFamily: "'Lexend', sans-serif", fontSize: 15 }}>
           No outfits match your search.
         </div>
       )}

@@ -34,10 +34,10 @@ export default function App() {
   }, [customOutfits]);
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0a0a0f", color: "#e8e8f0", fontFamily: "system-ui, sans-serif" }}>
+    <div style={{ minHeight: "100vh", background: "#000000", color: "#e8e8f0", fontFamily: "'Lexend', 'Helvetica Neue', sans-serif" }}>
       {/* Header */}
       <header style={{
-        background: "#0d0d18",
+        background: "#050505",
         borderBottom: "1px solid #ffffff0f",
         position: "sticky", top: 0, zIndex: 100,
         backdropFilter: "blur(12px)",
@@ -45,7 +45,7 @@ export default function App() {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 20px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 56 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
             <span style={{ fontSize: 18, color: "#e8ff4a" }}>✦</span>
-            <span style={{ fontFamily: "Georgia, serif", fontWeight: 700, fontSize: 17, color: "#f0f0ff", letterSpacing: "-0.3px" }}>
+            <span style={{ fontFamily: "'Lexend', sans-serif", fontWeight: 700, fontSize: 17, color: "#f0f0ff", letterSpacing: "-0.3px" }}>
               THE WARDROBE
             </span>
           </div>
