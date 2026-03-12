@@ -57,7 +57,7 @@ const OutfitCard = ({ outfit, isHighlighted, onClose }) => {
           ...(outfit.note ? [{ label: "FIT TIP", value: outfit.note, accent: true }] : []),
         ].map(({ label, value, accent }) => (
           <div key={label} style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
-            <span style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: accent ? "#e8ff4a" : tagColor,
+            <span style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: accent ? "#ffffff" : tagColor,
               letterSpacing: 1.5, fontWeight: 700, minWidth: 46, paddingTop: 1, opacity: accent ? 1 : 0.75 }}>{label}</span>
             <span style={{ fontSize: 12, color: accent ? "#e8ff4a99" : "#bbb",
               fontFamily: "'Lexend', sans-serif", lineHeight: 1.4, flex: 1,
@@ -107,9 +107,9 @@ const RandomModal = ({ outfit, onClose, onReroll }) => {
               ...(outfit.note ? [{ label: "FIT TIP", value: outfit.note, accent: true }] : []),
             ].map(({ label, value, accent }) => (
               <div key={label} style={{ display: "flex", gap: 10 }}>
-                <span style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: accent ? "#e8ff4a" : tagColor,
+                <span style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: accent ? "#ffffff" : tagColor,
                   fontWeight: 700, letterSpacing: 1.5, minWidth: 50 }}>{label}</span>
-                <span style={{ fontSize: 13, color: accent ? "#e8ff4a88" : "#ccc",
+                <span style={{ fontSize: 13, color: accent ? "#ffffffbb" : "#ccc",
                   fontFamily: "'Lexend', sans-serif", lineHeight: 1.4, fontStyle: accent ? "italic" : "normal" }}>{value}</span>
               </div>
             ))}

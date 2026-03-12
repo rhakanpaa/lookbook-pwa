@@ -52,10 +52,10 @@ export default function App() {
           <nav style={{ display: "flex", gap: 4 }}>
             {NAV.map(n => (
               <button key={n.key} onClick={() => setTab(n.key)} style={{
-                background: tab === n.key ? "#e8ff4a18" : "transparent",
-                border: tab === n.key ? "1px solid #e8ff4a44" : "1px solid transparent",
+                background: tab === n.key ? "#ffffff18" : "transparent",
+                border: tab === n.key ? "1px solid #ffffff44" : "1px solid transparent",
                 borderRadius: 8,
-                color: tab === n.key ? "#e8ff4a" : "#888",
+                color: tab === n.key ? "#ffffff" : "#888",
                 padding: "6px 14px",
                 fontSize: 13,
                 cursor: "pointer",
