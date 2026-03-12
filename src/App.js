@@ -44,7 +44,7 @@ export default function App() {
       }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 20px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 56 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <span style={{ fontSize: 18, color: "#e8ff4a" }}>✦</span>
+            <span style={{ fontSize: 18, color: "#ffffff" }}>✦</span>
             <span style={{ fontFamily: "'Lexend', sans-serif", fontWeight: 700, fontSize: 17, color: "#f0f0ff", letterSpacing: "-0.3px" }}>
               THE WARDROBE
             </span>

@@ -30,7 +30,7 @@ const OutfitCard = ({ outfit, isHighlighted, onClose }) => {
         background: `linear-gradient(90deg, ${tagColor}, transparent)`, borderRadius: "2px 2px 0 0" }} />
 
       <div style={{ position: "absolute", top: 12, right: isHighlighted ? 38 : 12,
-        fontFamily: "'Courier New', monospace", fontSize: 10, color: "#ffffff20", letterSpacing: 1 }}>
+        fontFamily: "'Courier New', monospace", fontSize: 10, color: "#ffffff99", letterSpacing: 1 }}>
         #{String(outfit.id).padStart(3, "0")}
       </div>
 
@@ -67,7 +67,7 @@ const OutfitCard = ({ outfit, isHighlighted, onClose }) => {
       </div>
 
       <div style={{ display: "flex", gap: 5, marginTop: 12, paddingTop: 10, borderTop: "1px solid #ffffff08", alignItems: "center" }}>
-        <span style={{ fontSize: 9, color: "#444", fontFamily: "Courier New", letterSpacing: 1 }}>palette</span>
+        <span style={{ fontSize: 9, color: "#ffffff99", fontFamily: "Courier New", letterSpacing: 1 }}>palette</span>
         {outfit.colors.map((c, i) => <SwatchDot key={i} color={c} />)}
       </div>
     </div>
@@ -90,7 +90,7 @@ const RandomModal = ({ outfit, onClose, onReroll }) => {
         position: "relative",
       }} onClick={e => e.stopPropagation()}>
         <div style={{ textAlign: "center", marginBottom: 20 }}>
-          <div style={{ fontFamily: "'Courier New', monospace", fontSize: 10, color: "#e8ff4a", letterSpacing: 3, textTransform: "uppercase", marginBottom: 6 }}>Today's Fit</div>
+          <div style={{ fontFamily: "'Courier New', monospace", fontSize: 10, color: "#ffffff", letterSpacing: 3, textTransform: "uppercase", marginBottom: 6 }}>Today's Fit</div>
           <div style={{ fontSize: 28, marginBottom: 4 }}>🎲</div>
           <h2 style={{ margin: 0, fontFamily: "'Lexend', sans-serif", color: "#eeeeff", fontSize: 22 }}>{outfit.name}</h2>
           <p style={{ margin: "4px 0 0", color: "#666", fontStyle: "italic", fontSize: 12, fontFamily: "'Lexend', sans-serif" }}>"{outfit.vibe}"</p>
@@ -158,7 +158,7 @@ export default function Lookbook({ customOutfits }) {
     <div style={{ maxWidth: 1200, margin: "0 auto", padding: "28px 20px" }}>
       {/* Header */}
       <div style={{ marginBottom: 28 }}>
-        <div style={{ fontFamily: "'Courier New', monospace", fontSize: 10, color: "#e8ff4a", letterSpacing: 4, textTransform: "uppercase", marginBottom: 6, opacity: 0.8 }}>
+        <div style={{ fontFamily: "'Courier New', monospace", fontSize: 10, color: "#ffffff", letterSpacing: 4, textTransform: "uppercase", marginBottom: 6, opacity: 0.8 }}>
           {filtered.length} of {allOutfits.length} combinations
         </div>
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
@@ -199,7 +199,7 @@ export default function Lookbook({ customOutfits }) {
       {/* Category Filter */}
       <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 28 }}>
         {allCategories.map(cat => {
-          const color = cat === "All" ? "#e8ff4a" : (categoryColors[cat] || "#888");
+          const color = cat === "All" ? "#ffffff" : (categoryColors[cat] || "#888");
           const active = activeCategory === cat;
           return (
             <button key={cat} onClick={() => setActiveCategory(cat)} style={{

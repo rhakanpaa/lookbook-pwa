@@ -129,7 +129,7 @@ export default function Assembler({ inventory, customOutfits, setCustomOutfits }
   return (
     <div style={{ maxWidth: 900, margin: "0 auto", padding: "28px 20px" }}>
       <div style={{ marginBottom: 28 }}>
-        <div style={{ fontFamily: "'Courier New', monospace", fontSize: 10, color: "#e8ff4a", letterSpacing: 4, textTransform: "uppercase", marginBottom: 4, opacity: 0.8 }}>
+        <div style={{ fontFamily: "'Courier New', monospace", fontSize: 10, color: "#ffffff", letterSpacing: 4, textTransform: "uppercase", marginBottom: 4, opacity: 0.8 }}>
           {customOutfits.length} custom outfits saved
         </div>
         <h1 style={{ margin: 0, fontSize: "clamp(24px, 4vw, 44px)", fontFamily: "'Lexend', sans-serif", fontWeight: 700, color: "#f0f0ff", letterSpacing: "-1px", lineHeight: 1 }}>
@@ -154,7 +154,7 @@ export default function Assembler({ inventory, customOutfits, setCustomOutfits }
             background: "#0a0a0a", border: "1px solid #e8ff4a18", borderRadius: 14,
             padding: 18, minHeight: 160,
           }}>
-            <div style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: "#e8ff4a", letterSpacing: 2, textTransform: "uppercase", marginBottom: 10, opacity: 0.8 }}>
+            <div style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: "#ffffff", letterSpacing: 2, textTransform: "uppercase", marginBottom: 10, opacity: 0.8 }}>
               Preview
             </div>
             {preview.length === 0 ? (
@@ -165,7 +165,7 @@ export default function Assembler({ inventory, customOutfits, setCustomOutfits }
               <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
                 {preview.map(r => (
                   <div key={r.label} style={{ display: "flex", gap: 10 }}>
-                    <span style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: "#e8ff4a", letterSpacing: 1.5, fontWeight: 700, minWidth: 46, paddingTop: 1, opacity: 0.7 }}>{r.label}</span>
+                    <span style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: "#ffffff", letterSpacing: 1.5, fontWeight: 700, minWidth: 46, paddingTop: 1, opacity: 0.7 }}>{r.label}</span>
                     <span style={{ fontSize: 12.5, color: "#ccc", fontFamily: "'Lexend', sans-serif" }}>{r.val}</span>
                   </div>
                 ))}

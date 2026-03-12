@@ -114,7 +114,7 @@ export default function Inventory({ inventory, setInventory }) {
     <div style={{ maxWidth: 1100, margin: "0 auto", padding: "28px 20px" }}>
       <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: 14, marginBottom: 24 }}>
         <div>
-          <div style={{ fontFamily: "'Courier New', monospace", fontSize: 10, color: "#e8ff4a", letterSpacing: 4, textTransform: "uppercase", marginBottom: 4, opacity: 0.8 }}>
+          <div style={{ fontFamily: "'Courier New', monospace", fontSize: 10, color: "#ffffff", letterSpacing: 4, textTransform: "uppercase", marginBottom: 4, opacity: 0.8 }}>
             {inventory.length} items
           </div>
           <h1 style={{ margin: 0, fontSize: "clamp(24px, 4vw, 44px)", fontFamily: "'Lexend', sans-serif", fontWeight: 700, color: "#f0f0ff", letterSpacing: "-1px", lineHeight: 1 }}>
@@ -154,7 +154,7 @@ export default function Inventory({ inventory, setInventory }) {
                       {item.name}
                     </div>
                     {item.colorLabel && (
-                      <div style={{ fontSize: 10, color: "#555", fontFamily: "Courier New", letterSpacing: 0.5, marginTop: 2 }}>
+                      <div style={{ fontSize: 10, color: "#ffffff99", fontFamily: "Courier New", letterSpacing: 0.5, marginTop: 2 }}>
                         {item.colorLabel}{item.shoeType ? ` · ${item.shoeType}` : ""}
                       </div>
                     )}
