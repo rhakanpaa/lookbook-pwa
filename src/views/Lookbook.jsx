@@ -59,7 +59,7 @@ const OutfitCard = ({ outfit, isHighlighted, onClose }) => {
           <div key={label} style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
             <span style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: accent ? "#ffffff" : tagColor,
               letterSpacing: 1.5, fontWeight: 700, minWidth: 46, paddingTop: 1, opacity: accent ? 1 : 0.75 }}>{label}</span>
-            <span style={{ fontSize: 12, color: accent ? "#e8ff4a99" : "#bbb",
+            <span style={{ fontSize: 12, color: accent ? "#ffffffbb" : "#bbb",
               fontFamily: "'Lexend', sans-serif", lineHeight: 1.4, flex: 1,
               fontStyle: accent ? "italic" : "normal" }}>{value}</span>
           </div>
